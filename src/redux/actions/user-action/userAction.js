@@ -5,5 +5,8 @@ const logIn = (user) => ({
   payload: user,
 });
 
+export const logOut = () => ({
+  type: LOG_OUT
+})
 
 export default logIn;
