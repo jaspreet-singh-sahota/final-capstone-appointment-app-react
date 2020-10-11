@@ -15,7 +15,26 @@ const LogInPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    
+    Axios.post(
+      request.logUserIn,
+      {
+        user: {
+          username: username,
+          password: password,
+        }
+      },
+      { withCredentials: true })
+      .then(response => {
+        if (response.data.status === "created") {
+          dispatch(logIn(response.data.user.username))
+        } else {
+          setErrors([response.data.errors])
+        }
+      })
+      .catch(error => {
+        console.log("registration error", error);
+      });
+  }
 
   return (
     <div>
