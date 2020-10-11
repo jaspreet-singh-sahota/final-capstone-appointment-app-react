@@ -6,7 +6,42 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Redirect } from 'react-router'
 
 const SignInPage = () => {
- 
+  const user = useSelector(state => state.user.isLoggedIn)
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [passwordConfirmation, setPasswordConfirmation] = useState('')
+  const [errors, setErrors] = useState([])
+  const dispatch = useDispatch()
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    Axios
+      .post(
+        request.SignUserIn,
+        {
+          user: {
+            username: username,
+            email: email,
+            password: password,
+            password_confirmation: passwordConfirmation
+          }
+        },
+        { withCredentials: true }
+      )
+      .then(response => {
+        if (response.data.status === "created") {
+          dispatch(logIn(response.data.user.username))
+        } else {
+          setErrors([response.data.errors])
+        }
+      })
+      .catch(error => {
+        console.log("registration error", error);
+      });
+  }
 
   return (
     <div>
