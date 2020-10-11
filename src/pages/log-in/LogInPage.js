@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import request from '../axios/request'
+import request from '../../axios/request'
 import Axios from 'axios'
-import logIn from '../redux/actions/user-action/userAction'
+import logIn from '../../redux/actions/user-action/userAction'
 import { Redirect } from 'react-router'
 
 const LogInPage = () => {
