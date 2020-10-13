@@ -19,7 +19,36 @@ const BookAppointmentForm = ({facilityId, facilityName }) => {
     dateToString = `${date.split(' ').slice(0, 5).join(' ')} AM`
   }
 
- 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    Axios.post(
+      request.setAppointment,
+      {
+        appointment: {
+          facility_id: facilityId,
+          date: dateToString,
+          city: city,
+        }
+      },
+      { withCredentials: true })
+      .then(response => {
+        if (response.data.status === "created") {
+          setIsActive(false)
+          setFormSubmitMessage(`You successfully booked an appointment on ${dateToString}`)
+          setTimeout(() => {
+            setFormSubmitMessage(null)
+          }, 5000);
+        }
+      })
+      .catch(error => {
+        setFormSubmitMessage(`There was ${error} while booking the appointment. Try again after a while`)
+        setTimeout(() => {
+          setFormSubmitMessage(null)
+        }, 5000);
+      });
+  }
+
   return (
     <div>
       {formSubmitMessage ? <h2>{formSubmitMessage}</h2> : null}
