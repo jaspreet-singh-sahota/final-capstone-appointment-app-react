@@ -13,7 +13,7 @@ const FacilityShowPage = ({ location }) => {
       <h2>3 Months Package <span>{facility.three_months_package}</span></h2>
       <h2>6 Months Package <span>{facility.six_months_package}</span></h2>
       <h2>Annual Package <span>{facility.annual_package}</span></h2>
-      <BookAppointmentForm/>
+      <BookAppointmentForm facilityId={facility.id} facilityName={facility.name}/>
     </div>
   )
 }
