@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDatePicker from 'react-datepicker';
+import './styles/datepicker.css'
 
 export const DatePickerComponent = ({selectedDate, setSelectedDate}) => {
 

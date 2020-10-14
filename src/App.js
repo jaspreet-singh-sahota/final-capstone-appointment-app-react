@@ -10,6 +10,7 @@ import SignInPage from './pages/sign-in-page/SignInPage';
 import { fetchFacilitySuccess, fetchFacilityFailure } from './redux/actions/facility-action/facilityAction';
 import HomePage from './pages/home-page/HomePage';
 import FacilityShowPage from './pages/facility-Show-page/FacilityShowPage';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   const dispatch = useDispatch()
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Navbar />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/login" component={LogInPage} />

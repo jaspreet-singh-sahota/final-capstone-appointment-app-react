@@ -1,5 +1,4 @@
 export const cities = [
-  { id: 0, disabled: true ,value: '--Select City--', label: '--Select City--'},
   {id: 1, value: 'Delhi', label: 'Delhi'},
   {id: 2, value: 'Mumbai', label: 'Mumbai'},
   {id: 3, value: 'Bangalore', label: 'Bangalore'},

@@ -1,19 +1,24 @@
 import React from 'react'
 import BookAppointmentForm from '../../components/book-appointment-form/BookAppointmentForm'
+import styles from './styles/FacilityShowPage.module.css'
 
 const FacilityShowPage = ({ location }) => {
   const facility = location.state.facility
-  
+
   return (
     <div>
-      <img alt='facility text' src={facility.image_url} />
-      <h1>{facility.name}</h1>
-      <h2>{facility.detailed_description}</h2>
-      <h2>Free Trial <span>{facility.free_trial}</span></h2>
-      <h2>3 Months Package <span>{facility.three_months_package}</span></h2>
-      <h2>6 Months Package <span>{facility.six_months_package}</span></h2>
-      <h2>Annual Package <span>{facility.annual_package}</span></h2>
-      <BookAppointmentForm facilityId={facility.id} facilityName={facility.name}/>
+      <img className={styles.image} alt='facility text' src={facility.image_url} />
+      <div className={styles['info-container']}>
+        <h1 className={styles.title}>{facility.name}</h1>
+        <h4 className={styles['bg-grey']}>Free Trial <div className={styles.price}>{facility.free_trial}</div></h4>
+        <h4>3 Months Package <div className={styles.price}>{facility.three_months_package}</div></h4>
+        <h4 className={styles['bg-grey']}>6 Months Package <div className={styles.price}>{facility.six_months_package}</div></h4>
+        <h4>Annual Package <div className={styles.price}>{facility.annual_package}</div></h4>
+        <h5 className={styles.detailed_description}>{facility.detailed_description}</h5>
+      </div>
+        <div className={styles.button}>
+          <BookAppointmentForm  facilityId={facility.id} facilityName={facility.name} />
+        </div>
     </div>
   )
 }
