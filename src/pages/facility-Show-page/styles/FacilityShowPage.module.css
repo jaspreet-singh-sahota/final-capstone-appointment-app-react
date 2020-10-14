@@ -1,0 +1,37 @@
+.image {
+  position: absolute;
+  top: 0;
+  object-fit: contain;
+  height: 100%;
+  width: 60%;
+  margin-left: 200px;
+}
+
+.info-container {
+  position: absolute;
+  right: 25px;
+  top: 8%;
+  width: 20%;
+  height: 80%
+}
+
+.title {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.bg-grey {
+  margin: 10px 0 10px -10px;
+  padding: 10px;
+  background-color: #e2e3e5;
+}
+
+.price {
+  margin-top: -20px;
+  text-align: right;
+}
+
+.detailed_description {
+  margin-top: 40px;
+  font-size: 0.9em;
+}
