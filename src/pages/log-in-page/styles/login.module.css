@@ -18,17 +18,24 @@
   align-items: center;
   height: 100%;
   margin-top: 12%;
-  margin-left: 15%;
 }
 
-.input {
-  margin: 15px;
+.input, .password {
+  top: 35%;
+  left:38%;
+  position: absolute;
+  margin-left: -20px;
+}
+
+.password {
+  left: 60.5%;
+  margin-left: 20px;
 }
 
 .button {
   position: absolute;
-  left: 53.8%;
-  margin-top: 30px;
+  left: 54%;
+  top: 48%;
 }
 
 .errors {

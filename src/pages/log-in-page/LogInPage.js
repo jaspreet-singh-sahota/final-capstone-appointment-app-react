@@ -72,7 +72,7 @@ const LogInPage = () => {
                     required
                   />
                 </div>
-                <div className={styles.input}>
+                <div className={styles.password}>
                   <InputField
                     type="password"
                     name="password"
