@@ -30,23 +30,8 @@
   margin-bottom: 60%;
 }
 
-.Facility-Overview-container {
-  height: 90vh;
-  display: flex;
-  align-items: center;
-}
-/* 
-.overflow-container {
-  overflow-x: hidden;
-} */
-
-.Facility-Overview-container ::-webkit-scrollbar {
-  display: none;
-  scrollbar-width: 0px;  /* Firefox */
-  background-color: transparent;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.Facility-Overview-container  {
-  -ms-overflow-style: none;  /* IE and Edge */
+.overview-container {
+  position: absolute;
+  top: 50%;
+  transform: translate(-0%, -50%);
 }
