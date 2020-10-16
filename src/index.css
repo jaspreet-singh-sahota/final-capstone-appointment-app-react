@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+::-webkit-scrollbar {
+  display:none;
+}
+
+
 * , a{
   margin: 0;
   padding: 0;

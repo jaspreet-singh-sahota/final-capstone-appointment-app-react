@@ -8,10 +8,10 @@ import request from './axios/request';
 import SignInPage from './pages/sign-in-page/SignInPage';
 import { fetchFacilitySuccess, fetchFacilityFailure } from './redux/actions/facility-action/facilityAction';
 import HomePage from './pages/home-page/HomePage';
-import FacilityShowPage from './pages/facility-Show-page/FacilityShowPage';
 import AppointmentsPage from './pages/appointments-page/AppointmentsPage';
 import Navbar from './components/navbar/Navbar';
 import LogInPage from './pages/log-in-page/LogInPage';
+import FacilityShowPage from './pages/facility-Show-page/FacilityShowPage';
 
 function App() {
   const dispatch = useDispatch()
@@ -38,8 +38,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
       <Switch>
+      <Navbar />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/login" component={LogInPage} />
         <Route exact path="/sign-in" component={SignInPage} />
