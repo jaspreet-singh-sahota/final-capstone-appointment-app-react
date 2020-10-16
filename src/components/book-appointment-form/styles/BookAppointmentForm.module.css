@@ -30,7 +30,8 @@ font-weight: bolder;
   background-color: rgba(175, 245, 12, 0.88);
   top: 0;
   width: 100%;
-  height: 100%
+  height: 100%;
+  left: 0;
 }
 
 .form-input {
@@ -57,4 +58,12 @@ font-weight: bolder;
   color: #ffffff;
   margin-left: 5px;
   letter-spacing: 5px;
+}
+
+.success-message {
+  position: absolute;
+  top: 2.7%;
+  left: 25%;
+  color: green;
+  /* color: #97BF0E */
 }
