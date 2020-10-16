@@ -52,9 +52,9 @@ const BookAppointmentForm = ({ facilityId, facilityName }) => {
 
   return (
     <div>
-      {formSubmitMessage ? <h2>{formSubmitMessage}</h2> : null}
+      {formSubmitMessage ? <h2 className={styles['success-message']}>{formSubmitMessage}</h2> : null}
       {!isActive ?
-        <button className={styles.button} onClick={() => setIsActive(!isActive)}>BOOK A CLASS</button> :
+        <button className={styles.button} onClick={() => setIsActive(!isActive)}>BOOK A TRAIL</button> :
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles['form-input']}>
             <h2 className={styles['form-fields']}>NAME:- <span className={styles.span}>{username}</span></h2>
