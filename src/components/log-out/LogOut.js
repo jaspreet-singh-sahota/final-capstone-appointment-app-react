@@ -5,7 +5,7 @@ import Axios from 'axios'
 import request from '../../axios/request'
 import { NavLink } from 'react-router-dom'
 
-const LogOut = ({ setIsFacilityClicked }) => {
+const LogOut = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn)
 
   const dispatch = useDispatch()
@@ -27,7 +27,7 @@ const LogOut = ({ setIsFacilityClicked }) => {
         <div>
 
           <h3>
-            <NavLink onClick={() => setIsFacilityClicked(true)} to='/login' exact
+            <NavLink to='/login' exact
               activeStyle={{
                 backgroundColor: '#97bf0f',
                 color: 'white',
@@ -39,7 +39,7 @@ const LogOut = ({ setIsFacilityClicked }) => {
           </NavLink>
           </h3>
           <h3 style={{marginTop: '20px'}}>
-            <NavLink onClick={() => setIsFacilityClicked(true)} to='/sign-in' exact
+            <NavLink to='/sign-in' exact
               activeStyle={{
                 backgroundColor: '#97bf0f',
                 color: 'white',
@@ -47,7 +47,7 @@ const LogOut = ({ setIsFacilityClicked }) => {
                 marginLeft: '-10px',
               }}
             >
-              Sign in
+              Sign up
           </NavLink>
           </h3>
         </div>
