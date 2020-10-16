@@ -13,10 +13,13 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import styles from './styles/navbar.module.css'
 import LogOut from '../log-out/LogOut'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Redirect } from 'react-router-dom';
 import FacilityOverview from '../facility-overview/FacilityOverview';
 import AppointmentsPage from '../../pages/appointments-page/AppointmentsPage';
-import AppointmentsTable from '../appointments-tabel/AppointmentsTable';
+import { useSelector } from 'react-redux';
+import LogInPage from '../../pages/log-in-page/LogInPage';
+import FacilityShowPage from '../../pages/facility-Show-page/FacilityShowPage';
+import SignInPage from '../../pages/sign-in-page/SignInPage';
 
 const drawerWidth = 200;
 
@@ -57,9 +60,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Navbar() {
+  const currentUser = useSelector(state => state.user.currentUser)
   const classes = useStyles();
   const theme = useTheme();
-  const [isFacilityClicked, setIsFacilityClicked] = useState(false)
+  const [facilityData, setFacilityData] = useState(null)
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -94,7 +98,7 @@ export default function Navbar() {
         }}
       >
         <div className={classes.drawerHeader}>
-          <Link onClick={() => setIsFacilityClicked(false)} to='/'><h1>CULTFIT</h1></Link>
+          <Link to='/'><h1>CULTFIT</h1></Link>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
@@ -102,17 +106,17 @@ export default function Navbar() {
         <div className={styles['flex-container']}>
           <div>
             <h3 className={styles['nav-items']}>
-              <NavLink onClick={() => setIsFacilityClicked(false)} to='/' exact activeStyle={{ backgroundColor: '#97bf0f', color: 'white', padding: '10px 100% 10px 10px', marginLeft: '-10px' }} >
+              <NavLink to='/' exact activeStyle={{ backgroundColor: '#97bf0f', color: 'white', padding: '10px 100% 10px 10px', marginLeft: '-10px' }} >
                 FACILITIES
             </NavLink>
             </h3>
             <h3 className={styles['nav-items']}>
-              <NavLink activeStyle={{ backgroundColor: '#97bf0f', color: 'white', padding: '10px 100% 10px 10px', marginLeft: '-10px' }} onClick={() => setIsFacilityClicked(true)} to="/appointments" exact>
+              <NavLink activeStyle={{ backgroundColor: '#97bf0f', color: 'white', padding: '10px 100% 10px 10px', marginLeft: '-10px' }} to="/appointments" exact>
                 APPOINTMENTS
-            </NavLink>
+              </NavLink>
             </h3>
             <div className={styles['nav-items']}>
-              <LogOut setIsFacilityClicked={setIsFacilityClicked} />
+              <LogOut/>
             </div>
           </div>
           <div className={`${styles['nav-items']} ${styles['icons-container']}`}>
@@ -128,17 +132,11 @@ export default function Navbar() {
           [classes.contentShift]: open,
         })} `}
       >
-        {window.location.pathname === '/' ?
-          !isFacilityClicked ?
-            <div className={styles['Facility-Overview-container']}>
-              <FacilityOverview setIsFacilityClicked={setIsFacilityClicked} />
-            </div> : null
-          : null}
-        {window.location.pathname === '/appointments' ?
-            <div>
-              <AppointmentsTable />
-            </div>
-          : null}
+        {window.location.pathname === '/' && <div className={styles['overview-container']}><FacilityOverview setFacility={setFacilityData}/></div>}
+        {window.location.pathname === '/login' && <LogInPage /> }
+        {window.location.pathname === '/sign-in' && <SignInPage />}
+        {window.location.pathname === '/appointments' && <AppointmentsPage />}
+        {window.location.pathname.includes('/facility') && <FacilityShowPage facilityData={facilityData}/> }
       </main>
     </div>
   );
