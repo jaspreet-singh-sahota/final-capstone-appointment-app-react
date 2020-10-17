@@ -15,7 +15,9 @@ const FacilityOverview = ({ setFacility }) => {
           <div style={{ position: 'relative' }}>
             <h3 className={styles['image-title']}>{facility.name}</h3>
             <Link onClick={() => setFacility(facility)} to={`/facility/${facility.id}`}>
-              <img className={styles.image} alt="facility text" src={facility.image_url} />
+              <div className={styles['image-container']}>
+                <img className={styles.image} alt="facility text" src={facility.image_url} />
+              </div>
               <h3 className={styles.title}>{facility.name}</h3>
               <h4 className={styles.info}>{facility.brief_description}</h4>
             </Link>

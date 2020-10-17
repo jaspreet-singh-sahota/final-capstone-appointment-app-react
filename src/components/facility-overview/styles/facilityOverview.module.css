@@ -9,7 +9,6 @@
 .image {
   object-fit: contain;
   max-height: 50vh;
-  margin: 17px 30px 17px 0;
   transition: transform 450ms;
   border-radius: 3px;
   cursor: pointer;
@@ -17,8 +16,8 @@
 
 .image:hover {
   overflow: hidden;
-  transform: scale(1.07);
-  transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  transform: scale(1.1);
+  transition: transform 4s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 
 .icons {
@@ -53,4 +52,9 @@
   top: 12%;
   left: 10%;
   font-size: 30px;
+}
+
+.image-container {
+  margin: 17px 30px 17px 0;
+  overflow: hidden;
 }
