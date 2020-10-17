@@ -32,7 +32,7 @@
   font-size: 0.9em;
   margin: 0 7px;
   border-radius: 50%;
-  border: 2px solid #ebebeb;
+  border: 1px solid #dbd9d9;
 }
 
 .title {
@@ -44,7 +44,7 @@
 .info {
   text-align: center;
   padding: 0 20px;
-  color: #b2b2b2;
+  color: #bdb8b8;
   line-height: 1.6em;
 }
 

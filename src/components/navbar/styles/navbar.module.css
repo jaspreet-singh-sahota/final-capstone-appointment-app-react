@@ -35,3 +35,15 @@
   top: 50%;
   transform: translate(-0%, -50%);
 }
+
+.menu-icons {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.toolbar {
+  position: fixed;
+  top: 10px;
+  left: 7px;
+}

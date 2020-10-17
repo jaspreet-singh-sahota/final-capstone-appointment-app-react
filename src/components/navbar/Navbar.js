@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Toolbar from '@material-ui/core/Toolbar';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -20,47 +20,9 @@ import { useSelector } from 'react-redux';
 import LogInPage from '../../pages/log-in-page/LogInPage';
 import FacilityShowPage from '../../pages/facility-Show-page/FacilityShowPage';
 import SignInPage from '../../pages/sign-in-page/SignInPage';
-
-const drawerWidth = 200;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
-}));
+import { useStyles } from './styles/animation';
 
 export default function Navbar() {
-  const currentUser = useSelector(state => state.user.currentUser)
   const classes = useStyles();
   const theme = useTheme();
   const [facilityData, setFacilityData] = useState(null)
@@ -76,8 +38,8 @@ export default function Navbar() {
 
   return (
     <div className={`${styles['overflow-container']} ${classes.root}`}>
-      <Toolbar>
-        <IconButton
+      <Toolbar className={styles.toolbar}>
+        <IconButton      
           color="inherit"
           aria-label="open drawer"
           onClick={handleDrawerOpen}
@@ -85,7 +47,7 @@ export default function Navbar() {
           className={clsx(classes.menuButton, open && classes.hide)}
           id={styles['toggle-icons']}
         >
-          <MenuIcon />
+          <MenuIcon className={styles['menu-icons']} />
         </IconButton>
       </Toolbar>
       <Drawer
