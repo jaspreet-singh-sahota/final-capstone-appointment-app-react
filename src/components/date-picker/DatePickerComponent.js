@@ -21,7 +21,7 @@ const DatePickerComponent = ({ selectedDate, setSelectedDate }) => (
 );
 
 DatePickerComponent.propTypes = {
-  selectedDate: PropTypes.string,
+  selectedDate: PropTypes.instanceOf(Date),
   setSelectedDate: PropTypes.func.isRequired,
 };
 
