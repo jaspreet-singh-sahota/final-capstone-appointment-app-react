@@ -18,7 +18,7 @@
 .image:hover {
   overflow: hidden;
   transform: scale(1.07);
-	transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 
 .icons {
@@ -53,5 +53,4 @@
   top: 12%;
   left: 10%;
   font-size: 30px;
-  z-index: 10px;
 }

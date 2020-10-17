@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Axios from 'axios';
 import { useDispatch } from 'react-redux';

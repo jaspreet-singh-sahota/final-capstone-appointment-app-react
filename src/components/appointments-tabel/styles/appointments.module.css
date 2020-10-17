@@ -46,7 +46,7 @@
 .text-message {
   position: absolute;
   top: 45%;
-  left: 40%
+  left: 40%;
 }
 
 .table {
@@ -58,4 +58,3 @@
 .table-container {
   margin-top: 2%;
 }
-

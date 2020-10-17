@@ -2,22 +2,22 @@
   position: absolute;
   right: 20px;
   bottom: 60px;
-padding: 10px 20px;
-border-radius: 20px;
-border: 1px solid #97bf0e;
-background-color: #97bf0e;
-color: white;
-font-weight: bolder;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #97bf0e;
+  background-color: #97bf0e;
+  color: white;
+  font-weight: bolder;
 }
 
 .inverted-button {
-margin-top: 20px;
-padding: 10px 20px;
-border-radius: 20px;
-border: 1px solid #ffffff;
-background-color: #ffffff;
-color: #97bf0e;
-font-weight: bolder;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #97bf0e;
+  font-weight: bolder;
 }
 
 .back-button {
@@ -47,7 +47,7 @@ font-weight: bolder;
 }
 
 .form-fields {
- padding: 20px;
+  padding: 20px;
 }
 
 .fields {
@@ -55,7 +55,7 @@ font-weight: bolder;
 }
 
 .span {
-  color: #ffffff;
+  color: #fff;
   margin-left: 5px;
   letter-spacing: 5px;
   font-size: 30px;

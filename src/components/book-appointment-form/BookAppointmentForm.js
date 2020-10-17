@@ -17,7 +17,7 @@ const BookAppointmentForm = ({ facilityId, facilityName }) => {
 
   if (selectedDate) {
     const date = selectedDate.toString()
-    dateToString = `${date.split(' ').slice(0, 5).join(' ')} AM`
+    dateToString = `${date.split(' ').slice(0, 5).join(' ')}`
   }
 
   const handleSubmit = (event) => {

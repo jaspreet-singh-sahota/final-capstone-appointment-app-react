@@ -1,4 +1,5 @@
-.background-image, .background-color {
+.background-image,
+.background-color {
   position: absolute;
   top: 0;
   left: 0;
@@ -20,9 +21,10 @@
   margin-top: 12%;
 }
 
-.input, .password {
+.input,
+.password {
   top: 35%;
-  left:38%;
+  left: 38%;
   position: absolute;
   margin-left: -20px;
 }

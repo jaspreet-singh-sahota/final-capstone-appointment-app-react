@@ -19,19 +19,19 @@
 
 .input[type=text] {
   width: 200px;
-  transition: ease-in-out, width .35s ease-in-out;
+  transition: ease-in-out, width 0.35s ease-in-out;
   text-align: center;
 }
 
 .input[type=email] {
   width: 200px;
-  transition: ease-in-out, width .35s ease-in-out;
+  transition: ease-in-out, width 0.35s ease-in-out;
   text-align: center;
 }
 
 .input[type=password] {
   width: 200px;
-  transition: ease-in-out, width .35s ease-in-out;
+  transition: ease-in-out, width 0.35s ease-in-out;
   text-align: center;
 }
 
