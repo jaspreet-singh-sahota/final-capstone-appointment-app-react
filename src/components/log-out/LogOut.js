@@ -43,7 +43,7 @@ const LogOut = () => {
               activeStyle={{
                 backgroundColor: '#97bf0f',
                 color: 'white',
-                padding: '10px 66.8% 10px 10px',
+                padding: '10px  63.78% 10px 10px',
                 marginLeft: '-10px',
               }}
             >

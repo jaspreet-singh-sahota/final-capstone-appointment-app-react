@@ -27,8 +27,12 @@
 }
 
 .price {
-  margin-top: -20px;
+  margin-top: -18px;
   text-align: right;
+}
+
+.price-margin {
+  margin-right: 10px;
 }
 
 .detailed_description {
