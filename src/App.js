@@ -13,13 +13,13 @@ import LogInPage from './pages/log-in-page/LogInPage';
 import FacilityShowPage from './pages/facility-Show-page/FacilityShowPage';
 
 function App() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     Axios.get(request.checkUserLoggedIn, { withCredentials: true })
       .then(response => {
         if (response.data.logged_in) {
-          dispatch(logIn(response.data.user.username))
+          dispatch(logIn(response.data.user.username));
         }
       })
       .catch(error => {
@@ -28,17 +28,17 @@ function App() {
 
     Axios.get(request.facilityData).then(response => {
       if (response.data) {
-        dispatch(fetchFacilitySuccess(response.data))
+        dispatch(fetchFacilitySuccess(response.data));
       }
     }).catch(error => {
-      dispatch(fetchFacilityFailure(error))
-    })
-  }, [])
+      dispatch(fetchFacilityFailure(error));
+    });
+  }, []);
 
   return (
     <BrowserRouter>
       <Switch>
-      <Navbar />
+        <Navbar />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/login" component={LogInPage} />
         <Route exact path="/sign-in" component={SignInPage} />

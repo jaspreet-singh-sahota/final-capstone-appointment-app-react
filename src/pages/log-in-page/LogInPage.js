@@ -1,98 +1,101 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import request from '../../axios/request'
-import Axios from 'axios'
-import logIn from '../../redux/actions/user-action/userAction'
-import { Redirect } from 'react-router'
-import styles from './styles/login.module.css'
-import InputField from '../../components/input-field/InputField'
-import Button from '../../components/button/Button'
-
-
+/* eslint-disable  react/no-array-index-key */
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Axios from 'axios';
+import { Redirect } from 'react-router';
+import request from '../../axios/request';
+import logIn from '../../redux/actions/user-action/userAction';
+import styles from './styles/login.module.css';
+import InputField from '../../components/input-field/InputField';
+import Button from '../../components/button/Button';
 
 const LogInPage = () => {
-  const facility = useSelector(state => state.facility.facilityCollection[2])
-  const user = useSelector(state => state.user.isLoggedIn)
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [errors, setErrors] = useState([])
-  const dispatch = useDispatch()
-  let image_url;
+  const facility = useSelector(state => state.facility.facilityCollection[2]);
+  const user = useSelector(state => state.user.isLoggedIn);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState([]);
+  const dispatch = useDispatch();
+  let imageUrl;
 
   if (facility) {
-    image_url = facility.image_url
+    imageUrl = facility.image_url;
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
 
     Axios.post(
       request.logUserIn,
       {
         user: {
-          username: username,
-          password: password,
-        }
+          username,
+          password,
+        },
       },
-      { withCredentials: true })
+      { withCredentials: true },
+    )
       .then(response => {
-        if (response.data.status === "created") {
-          dispatch(logIn(response.data.user.username))
+        if (response.data.status === 'created') {
+          dispatch(logIn(response.data.user.username));
         } else {
-          setErrors([response.data.errors])
+          setErrors([response.data.errors]);
         }
       })
       .catch(error => {
-        console.log("registration error", error);
+        setErrors(error);
       });
-  }
+  };
 
   return (
     <div>
-      {!user ?
-        <>
-          <img className={styles['background-image']} src={image_url} alt='login-page' />
-          <div className={styles['background-color']}></div>
-          {
-            errors.length ? <ul>
-              {errors.map((error, idx) => <li className={styles.errors} key={idx}>{error}</li>)}
-            </ul> : null
+      {!user
+        ? (
+          <>
+            <img className={styles['background-image']} src={imageUrl} alt="login-page" />
+            <div className={styles['background-color']} />
+            {
+            errors.length ? (
+              <ul>
+                {errors.map((error, idx) => <li className={styles.errors} key={idx}>{error}</li>)}
+              </ul>
+            ) : null
           }
-          <div>
+            <div>
 
-            < form onSubmit={handleSubmit}>
-              <div className={styles["form-container"]}>
-                <div className={styles.input}>
-                  <InputField
-                    type="text"
-                    name="username"
-                    placeholder="username"
-                    value={username}
-                    handlerOnChange={event => setUsername(event.target.value)}
-                    required
-                  />
+              <form onSubmit={handleSubmit}>
+                <div className={styles['form-container']}>
+                  <div className={styles.input}>
+                    <InputField
+                      type="text"
+                      name="username"
+                      placeholder="username"
+                      value={username}
+                      handlerOnChange={event => setUsername(event.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className={styles.password}>
+                    <InputField
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      value={password}
+                      handlerOnChange={event => setPassword(event.target.value)}
+                      required
+                    />
+                  </div>
                 </div>
-                <div className={styles.password}>
-                  <InputField
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={password}
-                    handlerOnChange={event => setPassword(event.target.value)}
-                    required
-                  />
+                <div className={styles.button}>
+                  <Button>Log in</Button>
                 </div>
-              </div>
-              <div className={styles.button}>
-                <Button type="submit">Log in</Button>
-              </div>
-            </form>
-          </div>
-        </>
-        : <Redirect to='/' />
-      }
-    </div >
+              </form>
+            </div>
+          </>
+        )
+        : <Redirect to="/" />}
+    </div>
   );
-}
+};
 
-export default LogInPage
+export default LogInPage;

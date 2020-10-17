@@ -1,6 +1,8 @@
-import { FETCH_APPOINTMENTS } from "../actionType";
+import { FETCH_APPOINTMENTS } from '../actionType';
 
-export const fetchAppointments = (appointments) => ({
+const fetchAppointments = appointments => ({
   type: FETCH_APPOINTMENTS,
   payload: appointments,
 });
+
+export default fetchAppointments;
