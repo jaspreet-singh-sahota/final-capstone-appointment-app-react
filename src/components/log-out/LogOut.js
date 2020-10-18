@@ -13,7 +13,7 @@ const LogOut = () => {
   const dispatch = useDispatch();
   const handleLogOut = () => {
     Axios
-      .delete(request.logUserOut, { withCredentials: true })
+      .delete(request.logUserOut)
       .then(response => {
         if (response.data.logged_out) {
           dispatch(logOut());
