@@ -38,7 +38,6 @@ const SignInPage = () => {
             password_confirmation: passwordConfirmation,
           },
         },
-        { withCredentials: true },
       )
       .then(response => {
         if (response.data.status === 'created') {
