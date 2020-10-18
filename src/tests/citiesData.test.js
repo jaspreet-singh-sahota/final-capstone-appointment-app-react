@@ -1,4 +1,4 @@
-import citiesData from '../redux/citiesData'
+import citiesData from '../redux/citiesData';
 
 describe('cities Data', () => {
   it('should be a Object', () => {

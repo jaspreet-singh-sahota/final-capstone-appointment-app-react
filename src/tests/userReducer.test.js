@@ -1,5 +1,5 @@
-import { LOG_IN, LOG_OUT } from "../redux/actions/actionType";
-import userReducer from "../redux/reducers/user/userReducer";
+import { LOG_IN, LOG_OUT } from '../redux/actions/actionType';
+import userReducer from '../redux/reducers/user/userReducer';
 
 describe('User reducer', () => {
   const initialState = {
@@ -10,7 +10,7 @@ describe('User reducer', () => {
   it('should successfully login the user', () => {
     expect(userReducer(initialState, {
       type: LOG_IN,
-      payload: 'Jaspreet'
+      payload: 'Jaspreet',
     })).toEqual({
       ...initialState,
       isLoggedIn: true,
@@ -27,6 +27,4 @@ describe('User reducer', () => {
       currentUser: '',
     });
   });
-
-
 });

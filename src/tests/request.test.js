@@ -1,4 +1,4 @@
-import request from '../axios/request'
+import request from '../axios/request';
 
 describe('Axios request', () => {
   it('should be a Object', () => {

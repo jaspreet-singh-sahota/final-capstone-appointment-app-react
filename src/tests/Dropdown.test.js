@@ -13,5 +13,4 @@ describe('Dropdown', () => {
     const wrapper = shallow(<Dropdown />);
     expect(wrapper).toMatchSnapshot();
   });
-})
-
+});

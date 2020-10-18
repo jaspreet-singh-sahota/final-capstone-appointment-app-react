@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../components/button/Button';
 import { shallow } from 'enzyme';
+import Button from '../components/button/Button';
 
 describe('Button', () => {
   it('should render a <button /> component', () => {
@@ -12,4 +12,4 @@ describe('Button', () => {
     const wrapper = shallow(<Button />);
     expect(wrapper).toMatchSnapshot();
   });
-})
+});

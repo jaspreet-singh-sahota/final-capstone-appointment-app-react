@@ -12,12 +12,12 @@ jest.mock('react-redux', () => ({
 
 describe('App', () => {
   it('should render a <HomePage /> component', () => {
-    const wrapper = shallow(<App />); 
+    const wrapper = shallow(<App />);
     expect(wrapper.find('#HomePage')).toHaveLength(1);
   });
 
   it('should render a <Navbar /> component', () => {
-    const wrapper = shallow(<App />); 
+    const wrapper = shallow(<App />);
     expect(wrapper.find(Navbar)).toHaveLength(1);
   });
 

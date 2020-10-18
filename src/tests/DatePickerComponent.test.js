@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DatePickerComponent from '../components/date-picker/DatePickerComponent';
 import ReactDatePicker from 'react-datepicker';
+import DatePickerComponent from '../components/date-picker/DatePickerComponent';
 
 describe('DatePickerComponent', () => {
   it('should render a <ReactDatePicker /> component', () => {
@@ -13,6 +13,4 @@ describe('DatePickerComponent', () => {
     const wrapper = shallow(<DatePickerComponent />);
     expect(wrapper).toMatchSnapshot();
   });
-})
-
-
+});

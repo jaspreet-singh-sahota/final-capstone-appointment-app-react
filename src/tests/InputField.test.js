@@ -12,5 +12,4 @@ describe('InputField', () => {
     const wrapper = shallow(<InputField />);
     expect(wrapper).toMatchSnapshot();
   });
-})
-
+});

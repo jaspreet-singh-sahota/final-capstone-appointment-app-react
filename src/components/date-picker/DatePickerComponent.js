@@ -26,7 +26,8 @@ DatePickerComponent.propTypes = {
 };
 
 DatePickerComponent.defaultProps = {
-  selectedDate: new Date()
+  selectedDate: new Date(),
+  setSelectedDate: undefined,
 };
 
 export default DatePickerComponent;

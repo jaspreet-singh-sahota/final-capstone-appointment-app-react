@@ -20,4 +20,8 @@ Dropdown.propTypes = {
   setCity: PropTypes.func,
 };
 
+Dropdown.defaultProps = {
+  setCity: undefined,
+};
+
 export default Dropdown;

@@ -1,5 +1,5 @@
-import { FETCH_FACILITY_REQUEST, FETCH_FACILITY_SUCCESS, FETCH_FACILITY_FAILURE } from "../redux/actions/actionType";
-import facilityReducer from "../redux/reducers/facility/facilityReducer";
+import { FETCH_FACILITY_REQUEST, FETCH_FACILITY_SUCCESS, FETCH_FACILITY_FAILURE } from '../redux/actions/actionType';
+import facilityReducer from '../redux/reducers/facility/facilityReducer';
 
 describe('get Facilities', () => {
   const initialState = {
@@ -23,9 +23,9 @@ describe('get Facilities', () => {
       error: '',
       loading: false,
       facilityCollection: [{
-          yoga: 'yoga',
-          dance: 'dance',
-          workout: 'workout',
+        yoga: 'yoga',
+        dance: 'dance',
+        workout: 'workout',
       }],
     });
   });

@@ -19,15 +19,19 @@ const InputField = ({
 );
 
 InputField.propTypes = {
-  type: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
   value: PropTypes.string,
-  handlerOnChange: PropTypes.func.isRequired,
+  handlerOnChange: PropTypes.func,
 };
 
 InputField.defaultProps = {
-  value: '.isRequired',
+  type: 'submit',
+  name: '',
+  placeholder: '',
+  value: '',
+  handlerOnChange: undefined,
 };
 
 export default InputField;
