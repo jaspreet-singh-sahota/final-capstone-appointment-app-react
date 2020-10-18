@@ -5,7 +5,7 @@ module.exports = function proxy(app) {
   app.use(
     cors(),
     createProxyMiddleware({
-      target: 'https://jassi-cultfit-app.herokuapp.com/',
+      target: 'https://jassi-appointment-app.herokuapp.com/',
       changeOrigin: true,
     }),
   );
