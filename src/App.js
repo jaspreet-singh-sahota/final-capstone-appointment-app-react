@@ -39,11 +39,11 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Navbar />
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/login" component={LogInPage} />
-        <Route exact path="/sign-in" component={SignInPage} />
-        <Route exact path="/facility/:id" component={FacilityShowPage} />
-        <Route exact path="/appointments" component={AppointmentsPage} />
+        <Route exact id="HomePage" path="/" component={HomePage} />
+        <Route exact id="LogInPage" path="/login" component={LogInPage} />
+        <Route exact id="SignInPage" path="/sign-in" component={SignInPage} />
+        <Route exact id="FacilityShowPage" path="/facility/:id" component={FacilityShowPage} />
+        <Route exact id="AppointmentsPage" path="/appointments" component={AppointmentsPage} />
       </Switch>
     </BrowserRouter>
   );
