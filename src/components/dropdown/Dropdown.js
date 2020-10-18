@@ -17,7 +17,7 @@ const Dropdown = ({ setCity }) => {
 };
 
 Dropdown.propTypes = {
-  setCity: PropTypes.func.isRequired,
+  setCity: PropTypes.func,
 };
 
 export default Dropdown;

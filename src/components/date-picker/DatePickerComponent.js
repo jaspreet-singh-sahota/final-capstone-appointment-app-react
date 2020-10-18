@@ -22,11 +22,11 @@ const DatePickerComponent = ({ selectedDate, setSelectedDate }) => (
 
 DatePickerComponent.propTypes = {
   selectedDate: PropTypes.instanceOf(Date),
-  setSelectedDate: PropTypes.func.isRequired,
+  setSelectedDate: PropTypes.func,
 };
 
 DatePickerComponent.defaultProps = {
-  selectedDate: '',
+  selectedDate: new Date()
 };
 
 export default DatePickerComponent;
