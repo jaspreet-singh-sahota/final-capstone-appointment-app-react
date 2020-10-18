@@ -1,12 +1,11 @@
-import { createProxyMiddleware } from 'http-proxy-middleware';
-import cors from 'cors';
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
-module.exports = function proxy(app) {
+module.exports = function (app) {
   app.use(
-    cors(),
+    '/api',
     createProxyMiddleware({
-      target: 'https://jassi-appointment-app.herokuapp.com/',
+      target: 'https://jassi-cultfit-app.herokuapp.com/',
       changeOrigin: true,
-    }),
+    })
   );
 };
