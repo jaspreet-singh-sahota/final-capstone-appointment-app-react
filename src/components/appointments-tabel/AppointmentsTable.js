@@ -11,7 +11,7 @@ const AppointmentsTable = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Axios.get(request.getAppointment, { withCredentials: true })
+    Axios.get(request.getAppointment)
       .then(response => {
         if (response.status === 200) {
           dispatch(fetchAppointments(response.data));
