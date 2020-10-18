@@ -33,7 +33,6 @@ const BookAppointmentForm = ({ facilityId, facilityName }) => {
           city,
         },
       },
-      { withCredentials: true },
     )
       .then(response => {
         if (response.data.status === 'created') {
