@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://jassi-cultfit-app.herokuapp.com/',
+      target: 'https://jassi-appointment-app.herokuapp.com/',
       changeOrigin: true,
     })
   );
