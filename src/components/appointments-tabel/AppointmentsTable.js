@@ -11,7 +11,10 @@ const AppointmentsTable = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Axios.get(request.getAppointment)
+    Axios.get(request.getAppointment, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
       .then(response => {
         if (response.status === 200) {
           dispatch(fetchAppointments(response.data));
