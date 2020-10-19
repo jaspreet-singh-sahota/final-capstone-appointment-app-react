@@ -9,19 +9,11 @@ import request from '../../axios/request';
 
 const LogOut = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
-
   const dispatch = useDispatch();
+  
   const handleLogOut = () => {
-    Axios
-      .delete(request.logUserOut, { withCredentials: true })
-      .then(response => {
-        if (response.data.logged_out) {
-          dispatch(logOut());
-        }
-      })
-      .catch(error => {
-        dispatch(logOut(error));
-      });
+    localStorage.removeItem('token')
+    dispatch(logOut());
   };
 
   return (

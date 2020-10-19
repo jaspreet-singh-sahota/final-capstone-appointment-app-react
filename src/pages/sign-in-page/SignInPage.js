@@ -37,11 +37,15 @@ const SignInPage = () => {
             password,
             password_confirmation: passwordConfirmation,
           },
-        },
-        { withCredentials: true }
+        }
       )
       .then(response => {
         if (response.data.status === 'created') {
+          localStorage.setItem('token',
+            JSON.stringify({
+              key: response.data.token,
+              username: response.data.user.username
+            }))
           dispatch(logIn(response.data.user.username));
         } else {
           setErrors([response.data.errors]);

@@ -16,15 +16,13 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Axios.get(request.checkUserLoggedIn, { withCredentials: true })
-      .then(response => {
-        if (response.data.logged_in) {
-          dispatch(logIn(response.data.user.username));
-        }
-      })
-      .catch(error => {
-        dispatch(logIn(error));
-      });
+    const user = JSON.parse(localStorage.getItem('token'));
+
+    if (user) {
+      if (user.key) {
+        dispatch(logIn(user.username))
+      }
+    }
 
     Axios.get(request.facilityData).then(response => {
       if (response.data) {

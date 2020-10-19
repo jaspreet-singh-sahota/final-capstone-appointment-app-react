@@ -6,16 +6,25 @@ import fetchAppointments from '../../redux/actions/appointment-action/appointmen
 import styles from './styles/appointments.module.css';
 
 const AppointmentsTable = () => {
+  const username = useSelector(state => state.user.currentUser);
   const appointments = useSelector(state => state.appointment.appointments);
   const facilities = useSelector(state => state.facility.facilityCollection);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Axios.get(request.getAppointment, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' }
-    })
+    const config = {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+    };
+
+    Axios.post(request.getAppointment,
+      {
+        config,
+        appointment: {
+          username
+        }
+      })
       .then(response => {
+        console.log(response)
         if (response.status === 200) {
           dispatch(fetchAppointments(response.data));
         }
