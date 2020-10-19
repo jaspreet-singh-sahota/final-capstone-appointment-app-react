@@ -41,8 +41,11 @@ const LogOut = () => {
                 activeStyle={{
                   backgroundColor: '#97bf0f',
                   color: 'white',
-                  padding: '10px  63.78% 10px 10px',
+                  width: '100%',
+                  padding: '10px  67% 10px 10px',
                   marginLeft: '-10px',
+                  display: 'inline-block',
+
                 }}
               >
                 Sign up
