@@ -1,7 +1,8 @@
-const express = require('express');
-const { createProxyMiddleware } = require('http-proxy-middleware');
+var express = require('express');
+// Import the library:
+var cors = require('cors');
 
-const app = express();
+var app = express();
 
-app.use('/api', createProxyMiddleware({ target: 'https://jassi-appointment-app.herokuapp.com/api/v1/', changeOrigin: true }));
-
+// Then use it before your routes are set up:
+app.use(cors());
