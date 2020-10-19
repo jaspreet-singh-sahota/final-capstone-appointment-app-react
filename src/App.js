@@ -16,7 +16,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Axios.get(request.checkUserLoggedIn)
+    Axios.get(request.checkUserLoggedIn, { withCredentials: true })
       .then(response => {
         if (response.data.logged_in) {
           dispatch(logIn(response.data.user.username));
