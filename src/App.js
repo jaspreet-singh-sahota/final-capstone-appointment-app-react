@@ -20,7 +20,7 @@ function App() {
 
     if (user) {
       if (user.key) {
-        dispatch(logIn(user.username))
+        dispatch(logIn(user.username));
       }
     }
 

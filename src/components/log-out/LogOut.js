@@ -2,17 +2,15 @@
 /* eslint-disable  jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { logOut } from '../../redux/actions/user-action/userAction';
-import request from '../../axios/request';
 
 const LogOut = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
   const dispatch = useDispatch();
-  
+
   const handleLogOut = () => {
-    localStorage.removeItem('token')
+    localStorage.removeItem('token');
     dispatch(logOut());
   };
 

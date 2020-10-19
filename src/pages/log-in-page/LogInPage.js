@@ -39,8 +39,8 @@ const LogInPage = () => {
           localStorage.setItem('token',
             JSON.stringify({
               key: response.data.token,
-              username: response.data.user.username
-            }))
+              username: response.data.user.username,
+            }));
           dispatch(logIn(response.data.user.username));
         } else {
           setErrors([response.data.error]);

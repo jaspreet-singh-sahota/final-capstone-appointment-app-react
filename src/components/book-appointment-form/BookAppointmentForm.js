@@ -23,14 +23,15 @@ const BookAppointmentForm = ({ facilityId, facilityName }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    
+
     const config = {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     };
 
     Axios.post(
       request.setAppointment,
-      { config,
+      {
+        config,
         appointment: {
           facility_id: facilityId,
           date: dateToString,
@@ -40,7 +41,6 @@ const BookAppointmentForm = ({ facilityId, facilityName }) => {
       },
     )
       .then(response => {
-        console.log(response)
         if (response.data.status === 'created') {
           setIsActive(false);
           setFormSubmitMessage(`You successfully booked an appointment on ${dateToString}`);

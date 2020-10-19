@@ -20,11 +20,10 @@ const AppointmentsTable = () => {
       {
         config,
         appointment: {
-          username
-        }
+          username,
+        },
       })
       .then(response => {
-        console.log(response)
         if (response.status === 200) {
           dispatch(fetchAppointments(response.data));
         }
