@@ -1,5 +1,5 @@
 import { FETCH_FACILITY_REQUEST, FETCH_FACILITY_SUCCESS, FETCH_FACILITY_FAILURE } from '../redux/actions/actionType';
-import { fetchFacilityRequest, fetchFacilitySuccess, fetchFacilityFailure } from '../redux/actions/facility-action/facilityAction';
+import { fetchFacilityRequest, fetchFacilitySuccess, fetchFacilityFailure } from '../redux/actions/facilityAction';
 
 describe('Get Facilities', () => {
   const parameter = 'Facility';

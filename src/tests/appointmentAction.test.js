@@ -1,5 +1,5 @@
 import { FETCH_APPOINTMENTS } from '../redux/actions/actionType';
-import fetchAppointments from '../redux/actions/appointment-action/appointmentAction';
+import fetchAppointments from '../redux/actions/appointmentAction';
 
 describe('get Appointment', () => {
   const appointments = 'appointments';

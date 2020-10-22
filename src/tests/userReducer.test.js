@@ -1,5 +1,5 @@
 import { LOG_IN, LOG_OUT } from '../redux/actions/actionType';
-import userReducer from '../redux/reducers/user/userReducer';
+import userReducer from '../redux/reducers/userReducer';
 
 describe('User reducer', () => {
   const initialState = {

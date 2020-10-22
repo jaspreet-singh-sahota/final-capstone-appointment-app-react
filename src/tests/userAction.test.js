@@ -1,5 +1,5 @@
 import { LOG_IN, LOG_OUT } from '../redux/actions/actionType';
-import logIn, { logOut } from '../redux/actions/user-action/userAction';
+import logIn, { logOut } from '../redux/actions/userAction';
 
 describe('User action', () => {
   const currentUser = 'Jaspreet';

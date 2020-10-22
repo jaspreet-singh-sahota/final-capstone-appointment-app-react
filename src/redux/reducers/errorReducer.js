@@ -21,7 +21,7 @@ const errorReducer = (state = INITIAL_STATE, action) => {
       error: {},
     };
     case FETCH_FACILITY_FAILURE: return {
-      error: {...action.payload},
+      error: { ...action.payload },
     };
     default: return state;
   }
