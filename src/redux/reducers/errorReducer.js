@@ -8,23 +8,23 @@ import {
 } from '../actions/actionType';
 
 const INITIAL_STATE = {
-  facilityCollection: [],
+  error: {},
 };
 
-const facilityReducer = (state = INITIAL_STATE, action) => {
+const errorReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_FACILITY_REQUEST: return {
       ...state,
     };
     case FETCH_FACILITY_SUCCESS: return {
       ...state,
-      facilityCollection: action.payload,
+      error: {},
     };
     case FETCH_FACILITY_FAILURE: return {
-      facilityCollection: [],
+      error: {...action.payload},
     };
     default: return state;
   }
 };
 
-export default facilityReducer;
+export default errorReducer;
