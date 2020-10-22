@@ -25,7 +25,7 @@ const SignInPage = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    requestSignUserIn(dispatch, username, email, password, passwordConfirmation, setErrors)
+    requestSignUserIn(dispatch, username, email, password, passwordConfirmation, setErrors);
   };
 
   return (

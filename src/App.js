@@ -12,7 +12,7 @@ import FacilityShowPage from './pages/facility-Show-page/FacilityShowPage';
 
 function App() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('token'));
 
@@ -22,7 +22,7 @@ function App() {
       }
     }
 
-    requestFacilityData(dispatch)
+    requestFacilityData(dispatch);
   }, []);
 
   return (

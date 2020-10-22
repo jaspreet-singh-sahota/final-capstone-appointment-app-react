@@ -23,7 +23,7 @@ const LogInPage = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    requestLogUserIn(dispatch, username, password, setErrors)
+    requestLogUserIn(dispatch, username, password, setErrors);
   };
 
   return (

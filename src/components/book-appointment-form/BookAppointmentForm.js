@@ -27,7 +27,8 @@ const BookAppointmentForm = ({ facilityId, facilityName }) => {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     };
 
-    bookAppointment(facilityId, dateToString, city, username, setIsActive, setFormSubmitMessage, config)
+    bookAppointment(facilityId, dateToString, city, username,
+      setIsActive, setFormSubmitMessage, config);
   };
 
   return (

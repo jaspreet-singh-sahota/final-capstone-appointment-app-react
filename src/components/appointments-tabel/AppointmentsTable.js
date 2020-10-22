@@ -10,7 +10,7 @@ const AppointmentsTable = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    requestAppointments(dispatch, username)
+    requestAppointments(dispatch, username);
   }, []);
 
   const facilityName = id => {
