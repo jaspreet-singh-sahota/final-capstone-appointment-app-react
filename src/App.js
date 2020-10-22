@@ -25,7 +25,7 @@ function App() {
     }
 
     Axios.get(request.facilityData).then(response => {
-      if (response.data) {
+      if (response.status === 200) {
         dispatch(fetchFacilitySuccess(response.data));
       }
     }).catch(error => {

@@ -41,7 +41,7 @@ const BookAppointmentForm = ({ facilityId, facilityName }) => {
       },
     )
       .then(response => {
-        if (response.data.status === 'created') {
+        if (response.data.status === 201) {
           setIsActive(false);
           setFormSubmitMessage(`You successfully booked an appointment on ${dateToString}`);
           setTimeout(() => {

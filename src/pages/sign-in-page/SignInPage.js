@@ -40,7 +40,7 @@ const SignInPage = () => {
         },
       )
       .then(response => {
-        if (response.data.status === 'created') {
+        if (response.data.status === 201) {
           localStorage.setItem('token',
             JSON.stringify({
               key: response.data.token,

@@ -35,7 +35,7 @@ const LogInPage = () => {
       },
     )
       .then(response => {
-        if (response.data.status === 'created') {
+        if (response.data.status === 200) {
           localStorage.setItem('token',
             JSON.stringify({
               key: response.data.token,

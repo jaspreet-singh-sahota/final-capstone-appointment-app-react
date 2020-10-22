@@ -1,9 +1,9 @@
 const request = {
-  logUserIn: 'https://jassi-appointment-app.herokuapp.com/api/v1/login',
-  SignUserIn: 'https://jassi-appointment-app.herokuapp.com/api/v1/users',
-  facilityData: 'https://jassi-appointment-app.herokuapp.com/api/v1/facilities',
-  setAppointment: 'https://jassi-appointment-app.herokuapp.com/api/v1/set_appointment',
-  getAppointment: 'https://jassi-appointment-app.herokuapp.com/api/v1/call_appointment',
+  logUserIn: 'http://localhost:8080/api/v1/login',
+  SignUserIn: 'http://localhost:8080/api/v1/authentication',
+  facilityData: 'http://localhost:8080/api/v1/facilities',
+  setAppointment: 'http://localhost:8080/api/v1/appointments',
+  getAppointment: 'http://localhost:8080/api/v1/appointments',
 };
 
 export default request;

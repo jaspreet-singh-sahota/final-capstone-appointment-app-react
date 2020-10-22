@@ -12,20 +12,15 @@ const AppointmentsTable = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const config = {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-    };
-
-    Axios.post(request.getAppointment,
+    Axios.get(request.getAppointment,
       {
-        config,
-        appointment: {
-          username,
-        },
+        params: {
+          username
+        }
       })
       .then(response => {
         if (response.status === 200) {
-          dispatch(fetchAppointments(response.data));
+          dispatch(fetchAppointments(response.data.appointments));
         }
       })
       .catch(error => {
