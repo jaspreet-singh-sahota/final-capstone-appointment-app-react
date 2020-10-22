@@ -1,10 +1,8 @@
 /* eslint-disable  react/no-array-index-key */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Axios from 'axios';
 import { Redirect } from 'react-router';
-import request from '../../axios/request';
-import logIn from '../../redux/actions/user-action/userAction';
+import { requestLogUserIn } from '../../axios/request';
 import styles from './styles/login.module.css';
 import InputField from '../../components/input-field/InputField';
 import Button from '../../components/button/Button';
@@ -25,30 +23,7 @@ const LogInPage = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    Axios.post(
-      request.logUserIn,
-      {
-        user: {
-          username,
-          password,
-        },
-      },
-    )
-      .then(response => {
-        if (response.data.status === 200) {
-          localStorage.setItem('token',
-            JSON.stringify({
-              key: response.data.token,
-              username: response.data.user.username,
-            }));
-          dispatch(logIn(response.data.user.username));
-        } else {
-          setErrors([response.data.error]);
-        }
-      })
-      .catch(error => {
-        setErrors(error);
-      });
+    requestLogUserIn(dispatch, username, password, setErrors)
   };
 
   return (

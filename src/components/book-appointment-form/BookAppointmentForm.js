@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import PropTypes from 'prop-types';
-import Axios from 'axios';
 import { useSelector } from 'react-redux';
 import DatePickerComponent from '../date-picker/DatePickerComponent';
 import Dropdown from '../dropdown/Dropdown';
-import request from '../../axios/request';
+import { bookAppointment } from '../../axios/request';
 import styles from './styles/BookAppointmentForm.module.css';
 
 const BookAppointmentForm = ({ facilityId, facilityName }) => {
@@ -28,33 +27,7 @@ const BookAppointmentForm = ({ facilityId, facilityName }) => {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     };
 
-    Axios.post(
-      request.setAppointment,
-      {
-        config,
-        appointment: {
-          facility_id: facilityId,
-          date: dateToString,
-          city,
-          username,
-        },
-      },
-    )
-      .then(response => {
-        if (response.data.status === 201) {
-          setIsActive(false);
-          setFormSubmitMessage(`You successfully booked an appointment on ${dateToString}`);
-          setTimeout(() => {
-            setFormSubmitMessage(null);
-          }, 5000);
-        }
-      })
-      .catch(error => {
-        setFormSubmitMessage(`There was ${error} while booking the appointment. Try again after a while`);
-        setTimeout(() => {
-          setFormSubmitMessage(null);
-        }, 5000);
-      });
+    bookAppointment(facilityId, dateToString, city, username, setIsActive, setFormSubmitMessage, config)
   };
 
   return (

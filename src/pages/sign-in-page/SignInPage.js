@@ -1,13 +1,11 @@
 /* eslint-disable  react/no-array-index-key */
 import React, { useState } from 'react';
-import Axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
-import logIn from '../../redux/actions/user-action/userAction';
-import request from '../../axios/request';
 import styles from './styles/signInPage.module.css';
 import InputField from '../../components/input-field/InputField';
 import Button from '../../components/button/Button';
+import { requestSignUserIn } from '../../axios/request';
 
 const SignInPage = () => {
   const facility = useSelector(state => state.facility.facilityCollection[4]);
@@ -27,33 +25,7 @@ const SignInPage = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    Axios
-      .post(
-        request.SignUserIn,
-        {
-          user: {
-            username,
-            email,
-            password,
-            password_confirmation: passwordConfirmation,
-          },
-        },
-      )
-      .then(response => {
-        if (response.data.status === 201) {
-          localStorage.setItem('token',
-            JSON.stringify({
-              key: response.data.token,
-              username: response.data.user.username,
-            }));
-          dispatch(logIn(response.data.user.username));
-        } else {
-          setErrors([response.data.errors]);
-        }
-      })
-      .catch(error => {
-        setErrors(error);
-      });
+    requestSignUserIn(dispatch, username, email, password, passwordConfirmation, setErrors)
   };
 
   return (

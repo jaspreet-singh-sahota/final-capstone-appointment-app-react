@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
-import Axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
-import request from '../../axios/request';
-import fetchAppointments from '../../redux/actions/appointment-action/appointmentAction';
+import { requestAppointments } from '../../axios/request';
 import styles from './styles/appointments.module.css';
 
 const AppointmentsTable = () => {
@@ -12,20 +10,7 @@ const AppointmentsTable = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Axios.get(request.getAppointment,
-      {
-        params: {
-          username
-        }
-      })
-      .then(response => {
-        if (response.status === 200) {
-          dispatch(fetchAppointments(response.data.appointments));
-        }
-      })
-      .catch(error => {
-        fetchAppointments(error);
-      });
+    requestAppointments(dispatch, username)
   }, []);
 
   const facilityName = id => {
