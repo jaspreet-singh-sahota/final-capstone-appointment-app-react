@@ -3,7 +3,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { logOut } from '../../redux/actions/user-action/userAction';
+import { logOut } from '../../redux/actions/userAction';
 
 const LogOut = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);

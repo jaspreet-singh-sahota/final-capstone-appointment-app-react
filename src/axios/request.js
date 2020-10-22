@@ -2,9 +2,9 @@ import Axios from 'axios';
 import {
   fetchFacilitySuccess,
   fetchFacilityFailure,
-} from '../redux/actions/facility-action/facilityAction';
-import logIn from '../redux/actions/user-action/userAction';
-import fetchAppointments from '../redux/actions/appointment-action/appointmentAction';
+} from '../redux/actions/facilityAction';
+import logIn from '../redux/actions/userAction';
+import fetchAppointments from '../redux/actions/appointmentAction';
 
 const request = {
   logUserIn: 'http://localhost:8080/api/v1/login',

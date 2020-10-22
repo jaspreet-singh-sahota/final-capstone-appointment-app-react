@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import logIn from './redux/actions/user-action/userAction';
+import logIn from './redux/actions/userAction';
 import { requestFacilityData } from './axios/request';
 import SignInPage from './pages/sign-in-page/SignInPage';
 import HomePage from './pages/home-page/HomePage';
