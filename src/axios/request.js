@@ -7,11 +7,11 @@ import logIn from '../redux/actions/userAction';
 import fetchAppointments from '../redux/actions/appointmentAction';
 
 const request = {
-  logUserIn: 'http://jassi-cultfit-app.herokuapp.com//api/v1/login',
-  SignUserIn: 'http://jassi-cultfit-app.herokuapp.com//api/v1/authentication',
-  facilityData: 'http://jassi-cultfit-app.herokuapp.com//api/v1/facilities',
-  setAppointment: 'http://jassi-cultfit-app.herokuapp.com//api/v1/appointments',
-  getAppointment: 'http://jassi-cultfit-app.herokuapp.com//api/v1/appointments',
+  logUserIn: 'http://jassi-cultfit-app.herokuapp.com/api/v1/login',
+  SignUserIn: 'http://jassi-cultfit-app.herokuapp.com/api/v1/authentication',
+  facilityData: 'http://jassi-cultfit-app.herokuapp.com/api/v1/facilities',
+  setAppointment: 'http://jassi-cultfit-app.herokuapp.com/api/v1/appointments',
+  getAppointment: 'http://jassi-cultfit-app.herokuapp.com/api/v1/appointments',
 };
 
 export const requestSignUserIn = (dispatch, username, email, password,
