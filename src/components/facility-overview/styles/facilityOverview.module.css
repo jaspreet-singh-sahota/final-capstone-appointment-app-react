@@ -2,6 +2,26 @@
   display: flex;
 }
 
+@media screen and (max-width: 1025px) {
+  .image-container {
+    width: 700px;
+  }
+
+  img {
+    height: 465px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .image-container {
+    width: 500px;
+  }
+
+  img {
+    height: 312px;
+  }
+}
+
 .container::-webkit-scrollbar {
   display: none;
 }

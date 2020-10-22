@@ -7,11 +7,12 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
   },
   drawer: {
-    width: drawerWidth,
+    width: 185,
     flexShrink: 0,
   },
   drawerPaper: {
     width: drawerWidth,
+    height: '100vh',
   },
   drawerHeader: {
     display: 'flex',

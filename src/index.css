@@ -1,4 +1,5 @@
 body {
+  height: 100vh;
   margin: 0;
   font-family:
     -apple-system,
@@ -14,6 +15,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 code {

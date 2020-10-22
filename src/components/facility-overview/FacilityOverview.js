@@ -12,7 +12,7 @@ const FacilityOverview = ({ setFacility }) => {
     <div className={styles.container}>
       {facilities.map(facility => (
         <div key={facility.id}>
-          <div style={{ position: 'relative' }}>
+          <div className={styles['image-container']} style={{ position: 'relative' }}>
             <h3 className={styles['image-title']}>{facility.name}</h3>
             <Link onClick={() => setFacility(facility)} to={`/facility/${facility.id}`}>
               <div className={styles['image-container']}>
