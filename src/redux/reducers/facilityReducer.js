@@ -5,7 +5,7 @@ import {
   FETCH_FACILITY_REQUEST,
   FETCH_FACILITY_SUCCESS,
   FETCH_FACILITY_FAILURE,
-} from '../../actions/actionType';
+} from '../actions/actionType';
 
 const INITIAL_STATE = {
   loading: false,

@@ -1,4 +1,4 @@
-import { FETCH_APPOINTMENTS } from '../../actions/actionType';
+import { FETCH_APPOINTMENTS } from '../actions/actionType';
 
 const INITIAL_STATE = { appointments: [] };
 
