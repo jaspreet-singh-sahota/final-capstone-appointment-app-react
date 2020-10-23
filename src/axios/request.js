@@ -7,11 +7,11 @@ import logIn from '../redux/actions/userAction';
 import fetchAppointments from '../redux/actions/appointmentAction';
 
 const request = {
-  logUserIn: 'https://jassi-appointment-app.herokuapp.com/api/v1/login',
-  SignUserIn: 'https://jassi-appointment-app.herokuapp.com/api/v1/authentication',
-  facilityData: 'https://jassi-appointment-app.herokuapp.com/api/v1/facilities',
-  setAppointment: 'https://jassi-appointment-app.herokuapp.com/api/v1/appointments',
-  getAppointment: 'https://jassi-appointment-app.herokuapp.com/api/v1/appointments',
+  logUserIn: 'http://localhost:8080/api/v1/login',
+  SignUserIn: 'http://localhost:8080/api/v1/authentication',
+  facilityData: 'http://localhost:8080/api/v1/facilities',
+  setAppointment: 'http://localhost:8080/api/v1/appointments',
+  getAppointment: 'http://localhost:8080/api/v1/appointments',
 };
 
 export const requestSignUserIn = (dispatch, username, email, password,
@@ -25,21 +25,18 @@ export const requestSignUserIn = (dispatch, username, email, password,
       password_confirmation: passwordConfirmation,
     },
   },
-)
-  .then(response => {
-    if (response.data.status === 201) {
+).then(response => {
+    if (response.status === 201) {
       localStorage.setItem('token',
         JSON.stringify({
           key: response.data.token,
           username: response.data.user.username,
         }));
       dispatch(logIn(response.data.user.username));
-    } else {
-      setErrors([response.data.errors]);
     }
   })
   .catch(error => {
-    setErrors(error);
+    setErrors([error.response.data.errors])
   });
 
 export const requestAppointments = (dispatch, username) => Axios.get(request.getAppointment,
@@ -66,27 +63,25 @@ export const requestLogUserIn = (dispatch, username, password, setErrors) => Axi
     },
   },
 ).then(response => {
-  if (response.data.status === 200) {
+  if (response.status === 200) {
     localStorage.setItem('token',
-      JSON.stringify({
-        key: response.data.token,
-        username: response.data.user.username,
-      }));
+    JSON.stringify({
+      key: response.data.token,
+      username: response.data.user.username,
+    }));
     dispatch(logIn(response.data.user.username));
-  } else {
-    setErrors([response.data.error]);
   }
 })
-  .catch(error => {
-    setErrors(error);
-  });
+.catch(error => {
+  setErrors([error.response.data.error])
+});
 
 export const requestFacilityData = dispatch => Axios.get(request.facilityData).then(response => {
   if (response.status === 200) {
     dispatch(fetchFacilitySuccess(response.data));
   }
 }).catch(error => {
-  dispatch(fetchFacilityFailure(error));
+  dispatch(fetchFacilityFailure(error.response.data.error));
 });
 
 export const bookAppointment = (facilityId, dateToString, city, username,
@@ -102,16 +97,15 @@ export const bookAppointment = (facilityId, dateToString, city, username,
     },
   },
 ).then(response => {
-  if (response.data.status === 201) {
+  if (response.status === 201) {
     setIsActive(false);
     setFormSubmitMessage(`You successfully booked an appointment on ${dateToString}`);
     setTimeout(() => {
       setFormSubmitMessage(null);
     }, 5000);
   }
-})
-  .catch(error => {
-    setFormSubmitMessage(`There was ${error} while booking the appointment. Try again after a while`);
+}).catch(error => {
+    setFormSubmitMessage(`There was ${error.response.data.error} while booking the appointment. Try again after a while`);
     setTimeout(() => {
       setFormSubmitMessage(null);
     }, 5000);

@@ -5,7 +5,7 @@ import styles from './styles/appointments.module.css';
 
 const AppointmentsTable = () => {
   const username = useSelector(state => state.user.currentUser);
-  const appointments = useSelector(state => state.appointment.appointments);
+  const appointments = useSelector(state => state.appointment);
   const facilities = useSelector(state => state.facility.facilityCollection);
   const dispatch = useDispatch();
 

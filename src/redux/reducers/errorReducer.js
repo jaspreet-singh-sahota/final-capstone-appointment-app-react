@@ -7,9 +7,7 @@ import {
   FETCH_FACILITY_FAILURE,
 } from '../actions/actionType';
 
-const INITIAL_STATE = {
-  error: {},
-};
+const INITIAL_STATE = {};
 
 const errorReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
