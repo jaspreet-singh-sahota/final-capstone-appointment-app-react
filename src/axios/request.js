@@ -25,8 +25,7 @@ export const requestSignUserIn = async (dispatch, username, email, password,
           password,
           password_confirmation: passwordConfirmation,
         },
-      }
-    )
+      });
     if (response.status === 201) {
       localStorage.setItem('token',
         JSON.stringify({
@@ -37,8 +36,8 @@ export const requestSignUserIn = async (dispatch, username, email, password,
     }
   } catch (error) {
     setErrors([error.response.data.errors]);
-  };
-}
+  }
+};
 
 export const requestAppointments = async (dispatch, username) => {
   try {
@@ -47,28 +46,26 @@ export const requestAppointments = async (dispatch, username) => {
         params: {
           username,
         },
-      }
-    );
+      });
     if (response.status === 200) {
       dispatch(fetchAppointments(response.data.appointments));
     }
-  }
-  catch (error) {
+  } catch (error) {
     fetchAppointments(error);
-  };
-}
+  }
+};
 
 export const requestLogUserIn = async (dispatch, username, password, setErrors) => {
   try {
-    const request = await Axios.post(
+    const response = await Axios.post(
       request.logUserIn,
       {
         user: {
           username,
           password,
         },
-      }
-    )
+      },
+    );
     if (response.status === 200) {
       localStorage.setItem('token',
         JSON.stringify({
@@ -77,21 +74,20 @@ export const requestLogUserIn = async (dispatch, username, password, setErrors) 
         }));
       dispatch(logIn(response.data.user.username));
     }
-  }
-  catch (error) {
+  } catch (error) {
     setErrors([error.response.data.error]);
-  };
-}
+  }
+};
 
-export const requestFacilityData = async (dispatch) => {
+export const requestFacilityData = async dispatch => {
   try {
-    const response = await Axios.get(request.facilityData)
+    const response = await Axios.get(request.facilityData);
     if (response.status === 200) {
       dispatch(fetchFacilitySuccess(response.data));
     }
   } catch (error) {
     dispatch(fetchFacilityFailure(error.response.data.error));
-  };
+  }
 };
 
 export const bookAppointment = async (facilityId, dateToString, city, username,
@@ -108,7 +104,7 @@ export const bookAppointment = async (facilityId, dateToString, city, username,
           username,
         },
       },
-    )
+    );
     if (response.status === 201) {
       setIsActive(false);
       setFormSubmitMessage(`You successfully booked an appointment on ${dateToString}`);
@@ -121,5 +117,5 @@ export const bookAppointment = async (facilityId, dateToString, city, username,
     setTimeout(() => {
       setFormSubmitMessage(null);
     }, 5000);
-  };
-}
+  }
+};
