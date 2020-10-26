@@ -1,0 +1,22 @@
+.react-dropdown-select-content span {
+  margin-left: 15px;
+  margin-bottom: -15px;
+}
+
+.react-dropdown-select-input {
+  width: 80px;
+  color: #fff;
+}
+
+.react-dropdown-select-input::placeholder {
+  color: #fff;
+  font-weight: bolder;
+}
+
+.react-dropdown-select-dropdown {
+  width: 150px;
+}
+
+.react-dropdown-select-dropdown span {
+  padding: 2.9px 10px !important;
+}

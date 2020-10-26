@@ -1,0 +1,49 @@
+#toggle-icons {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+}
+
+.nav-items {
+  margin-left: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.flex-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  padding-top: 60%;
+  padding-bottom: 10%;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.nav-header {
+  margin-bottom: 60%;
+}
+
+.overview-container {
+  position: absolute;
+  top: 50%;
+  transform: translate(-0%, -50%);
+}
+
+.menu-icons {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.toolbar {
+  position: fixed;
+  top: 10px;
+  left: 7px;
+}

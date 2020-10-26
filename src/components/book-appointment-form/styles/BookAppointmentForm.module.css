@@ -1,0 +1,70 @@
+.button {
+  position: absolute;
+  right: 20px;
+  bottom: 60px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #97bf0e;
+  background-color: #97bf0e;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.inverted-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #97bf0e;
+  font-weight: bolder;
+}
+
+.back-button {
+  width: 100px;
+  margin-right: 20px;
+}
+
+.form {
+  position: absolute;
+  background-color: rgba(175, 245, 12, 0.88);
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.form-input {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select {
+  display: flex;
+}
+
+.form-fields {
+  padding: 20px;
+}
+
+.fields {
+  padding: 20px;
+}
+
+.span {
+  color: #fff;
+  margin-left: 5px;
+  letter-spacing: 5px;
+  font-size: 30px;
+}
+
+.success-message {
+  position: absolute;
+  top: 2.7%;
+  left: 25%;
+  color: green;
+}

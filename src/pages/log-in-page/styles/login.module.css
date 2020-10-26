@@ -1,0 +1,51 @@
+.background-image,
+.background-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+
+.background-color {
+  background-color: rgba(175, 245, 12, 0.88);
+  z-index: -1;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 12%;
+}
+
+.input,
+.password {
+  top: 35%;
+  left: 38%;
+  position: absolute;
+  margin-left: -20px;
+}
+
+.password {
+  left: 60.5%;
+  margin-left: 20px;
+}
+
+.button {
+  position: absolute;
+  left: 54%;
+  top: 48%;
+}
+
+.errors {
+  position: absolute;
+  color: red;
+  left: 47%;
+  top: 24%;
+  font-weight: 500;
+  font-size: 20px;
+  list-style: none;
+}

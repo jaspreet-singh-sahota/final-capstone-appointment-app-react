@@ -1,0 +1,60 @@
+.flex-container {
+  display: flex;
+  margin-top: 4%;
+}
+
+.city {
+  position: absolute;
+  margin-left: 33.5%;
+  text-align: left;
+}
+
+.city-name {
+  position: absolute;
+  margin-left: 35%;
+  text-align: left;
+  color: black;
+}
+
+.date {
+  position: absolute;
+  margin-left: 56%;
+  text-align: left;
+}
+
+.date-title {
+  position: absolute;
+  margin-left: 62%;
+  text-align: left;
+  color: black;
+}
+
+.facility {
+  overflow: hidden;
+  position: relative;
+  left: 3%;
+  text-align: left;
+}
+
+.facility-name {
+  position: relative;
+  left: 0.5%;
+  text-align: left;
+  color: black;
+}
+
+.text-message {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+}
+
+.table {
+  display: flex;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.table-container {
+  margin-top: 2%;
+}

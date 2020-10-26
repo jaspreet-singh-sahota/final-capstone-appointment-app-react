@@ -1,0 +1,37 @@
+.background-image,
+.background-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+
+.background-color {
+  background-color: rgba(175, 245, 12, 0.88);
+  z-index: -1;
+}
+
+.form {
+  position: absolute;
+  width: 500px;
+  top: 48%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.input {
+  margin: 20px;
+}
+
+.errors {
+  text-align: center;
+  color: red;
+  font-weight: 500;
+  font-size: 20px;
+  list-style: none;
+  margin-left: 17%;
+  margin-top: 10px;
+}

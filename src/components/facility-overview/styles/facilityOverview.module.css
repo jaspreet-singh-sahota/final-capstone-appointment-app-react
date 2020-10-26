@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+}
+
+@media screen and (max-width: 1025px) {
+  .image-container {
+    width: 700px;
+  }
+
+  img {
+    height: 465px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .image-container {
+    width: 500px;
+  }
+
+  img {
+    height: 312px;
+  }
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.image {
+  object-fit: contain;
+  max-height: 50vh;
+  transition: transform 450ms;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.image:hover {
+  overflow: hidden;
+  transform: scale(1.1);
+  transition: transform 4s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.icon {
+  padding: 15px;
+  font-size: 0.9em;
+  margin: 0 7px;
+  border-radius: 50%;
+  border: 1px solid #dbd9d9;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #151515;
+}
+
+.info {
+  text-align: center;
+  padding: 0 20px;
+  color: #bdb8b8;
+  line-height: 1.6em;
+}
+
+.image-title {
+  position: absolute;
+  top: 12%;
+  left: 10%;
+  font-size: 30px;
+}
+
+.image-container {
+  margin: 17px 30px 17px 0;
+  overflow: hidden;
+}
